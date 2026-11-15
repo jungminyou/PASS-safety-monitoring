@@ -1,6 +1,8 @@
 # Restricted inputs and generated outputs must never be committed.
 *.npz
 *.pkl
+# The bundled synthetic dataset contains no participant data.
+!synthetic_data/*.npz
 data/
 results/
 state/

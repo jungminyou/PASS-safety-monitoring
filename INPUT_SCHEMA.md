@@ -1,6 +1,6 @@
 # Restricted input contracts
 
-All inputs described here remain private. No example participant rows are supplied.
+The original inputs described here remain private. A synthetic dataset with the same format is provided in `synthetic_data/`.
 
 ## Daily CSV
 
