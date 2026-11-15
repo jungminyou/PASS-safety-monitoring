@@ -1,5 +1,7 @@
 # Assistive Technologies on Safety Monitoring for Community-Dwelling Persons Living with Dementia — analysis code
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24246766.svg)](https://doi.org/10.5281/zenodo.24246766)
+
 This repository contains the analysis code for the paper "Assistive Technologies on Safety Monitoring for Community-Dwelling Persons Living with Dementia", which has been accepted for publication in *Scientific Reports*. It covers the participant characteristics (Table 1), the sleep and in-home sensor comparison (Table 2), the participant-level prediction models (Table 3), and Figures 1–3.
 
 ## Data
@@ -38,6 +40,14 @@ python figures.py             # Figures 1–3 (requires participant_models.py ou
 With the original data, set `PASS_PRIVATE_DATA` to the restricted input directory instead and leave `PASS_PERMUTATIONS` unset.
 
 Results are written to `results/`, `state/`, and `figures/` inside the work directory. The permutation count defaults to 2,000. When the original data are used, generated figures and state include participant-level information and must remain private. The figure script reads only state generated in the selected work directory.
+
+## Citation
+
+If you use this code, please cite the archived software and the paper:
+
+Lee KH, Cho A, You J, Lee JY, Choi Y, Lee S, Yang E. Analysis code for "Assistive Technologies on Safety Monitoring for Community-Dwelling Persons Living with Dementia". Zenodo. https://doi.org/10.5281/zenodo.24246766
+
+This DOI always resolves to the latest version; version 1.0.0 is https://doi.org/10.5281/zenodo.24246767.
 
 ## License
 
