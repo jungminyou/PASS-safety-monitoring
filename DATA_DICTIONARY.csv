@@ -1,0 +1,51 @@
+feature,type,definition,unit_or_codes,input
+P_ID,integer,Arbitrary study dyad key; not a direct identifier,consistent across private inputs,daily CSV
+Days,integer,Observation day within the monitoring window,1 to 14,daily CSV
+Event,binary integer,At least one diary-reported safety incident on this day,0=no; 1=yes,daily CSV
+Age,numeric,Age of person living with dementia,years,daily CSV
+C_Age,numeric,Age of family caregiver,years,daily CSV
+CIRS_G_totalscore,numeric,Cumulative Illness Rating Scale Geriatric total score,score,daily CSV
+CIRS_G_S_index,numeric,Cumulative Illness Rating Scale Geriatric severity index,index,daily CSV
+Med_total,numeric,Number of medications,count,daily CSV
+CSDD_total,numeric,Korean Cornell Scale for Depression in Dementia total,score,daily CSV
+NPI_totalscore,numeric,Korean Neuropsychiatric Inventory total,score,daily CSV
+ADL_total,numeric,Korean Activities of Daily Living total,score,daily CSV
+IADL_total,numeric,Korean Instrumental Activities of Daily Living total,score,daily CSV
+MMSE_total,numeric,Korean Mini Mental State Examination total; negative legacy sentinel denotes unable to complete,0 to 30; legacy -1,daily CSV
+P_Gender,categorical integer,Sex of person living with dementia,1=male; 2=female,daily CSV
+C_Gender,categorical integer,Sex of caregiver,1=male; 2=female,daily CSV
+P_Marriage,categorical integer,Marital status of person living with dementia,1=never married; 2=married; 3=separated; 4=widowed; 5=divorced,daily CSV
+P_Edu,categorical integer,Education of person living with dementia,1=elementary or less; 2=middle school; 3=high school; 4=college or above,daily CSV
+C_Edu,categorical integer,Education of caregiver,same as P_Edu,daily CSV
+P_Job_re,categorical integer,Employment of person living with dementia,0=not employed; 1=employed,daily CSV
+C_Job_re,categorical integer,Employment of caregiver,0=not employed; 1=employed,daily CSV
+Help,categorical integer,Formal care support,0=no; 1=yes,daily CSV
+Relationship,categorical integer,Caregiver relationship,1=spouse; 2=son; 3=daughter; 4=son-in-law; 5=daughter-in-law,daily CSV
+Income,categorical integer,Monthly household income in million KRW,1=<0.5; 2=0.5-1; 3=1-2; 4=2-3; 5=3-4; 6=4-5; 7=>=5,daily CSV
+Polypharmacy,categorical integer,Five or more medications,0=no; 1=yes,daily CSV
+MMSE_group,categorical integer,Cognitive impairment stage,0=normal/questionable; 1=mild/moderate; 2=severe,daily CSV
+TST,numeric,Total sleep time,minutes,daily CSV
+WASO,numeric,Wake after sleep onset,minutes,daily CSV
+Efficiency,numeric,Sleep efficiency,percent,daily CSV
+NoA,numeric,Number of awakenings,count,daily CSV
+MAL,numeric,Mean awakening length,minutes,daily CSV
+TST_night,numeric,Nighttime total sleep time,minutes,daily CSV
+WASO_night,numeric,Nighttime wake after sleep onset,minutes,daily CSV
+Efficiency_night,numeric,Nighttime sleep efficiency,percent,daily CSV
+NoA_night,numeric,Number of nighttime awakenings,count,daily CSV
+MAL_night,numeric,Mean nighttime awakening length,minutes,daily CSV
+Onset Latency,numeric,Sleep onset latency,minutes,daily CSV
+ir_total,numeric,Sum of retained infrared counts across installed sensors and all hours,count,derived daily sensor feature
+ir_per_sensor,numeric,ir_total divided by number of installed sensors,count per sensor,derived daily sensor feature
+ir_night,numeric,Retained infrared counts in night hours,count,derived daily sensor feature
+ir_day,numeric,Retained infrared counts in daytime hours,count,derived daily sensor feature
+ir_night_frac,numeric,ir_night divided by ir_total; missing when total is zero,fraction,derived daily sensor feature
+ir_per_awmin,numeric,ir_total divided by actigraphy movement minutes; missing with zero denominator,count per movement minute,derived daily sensor feature
+ir_active_hours,numeric,Number of hours with at least one retained infrared detection,hours,derived daily sensor feature
+ir_active_night_hours,numeric,Number of night hours with at least one retained infrared detection,hours,derived daily sensor feature
+ir_hour_entropy,numeric,Negative sum of p*log(p+1e-12) across 24 hourly count proportions; missing for zero total,natural log units,derived daily sensor feature
+ir_peak_hour,numeric,First hour attaining the maximum hourly count; legacy all-zero result is zero,0 to 23,derived daily sensor feature
+ir_peak_frac,numeric,Maximum hourly count divided by daily total; missing for zero total,fraction,derived daily sensor feature
+ir_night_bouts,numeric,Number of active-hour runs in ordered night hours 20 through 23 then 0 through 7,count,derived daily sensor feature
+aw_move_minutes,numeric,Daily minutes of wrist movement used for infrared filtering,minutes,derived daily sensor feature
+sensor_log_present,numeric,Indicator that sensor logs are present on this day,0 or 1,derived daily sensor feature

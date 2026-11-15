@@ -1,0 +1,12 @@
+# Restricted inputs and generated outputs must never be committed.
+*.npz
+*.pkl
+data/
+results/
+state/
+figures/
+
+# Python and tooling caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
